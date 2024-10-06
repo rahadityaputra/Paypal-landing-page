@@ -3,26 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
           content-visibility: auto;
         }
-
-
       }
 
       @layer components {
         .mega-menu-item {
-            @apply bg-blue-700 p-5  text-white flex;
+          @apply bg-blue-700 p-5  text-white flex;
+        }
+
+        .mega-menu.active {
+          @apply translate-y-0;
         }
 
         .mega-menu-item > div {
-            @apply basis-1/2;
+          @apply basis-1/2;
         }
 
         .mega-menu-item > div > h3 {
-            @apply font-bold;
+          @apply font-bold;
         }
       }
     </style>
@@ -45,7 +49,7 @@
     <!-- </h1> -->
     <nav id="navbar">
       <div
-        class="main-menu vw-100 bg-white p-3 flex justify-between items-center flex-wrap"
+        class="main-menu vw-100 bg-white p-3 flex justify-between items-center flex-wrap z-40 relative"
       >
         <div class="nav-brand text-3xl font-bold basis-1/4 text-center">
           <span class="text-blue-600">Pay</span
@@ -54,10 +58,10 @@
 
         <div class="list-menu text-lg font-bold text-gray-500 basis-1/2">
           <ul class="flex gap-x-5 w-full h-full items-center justify-evenly">
-            <li>PERSONAL</li>
-            <li>BUSINESS</li>
+            <li class="border-"><a href="#">PERSONAL<span class="material-icons align-middle"> expand_more </span></a></li>
+            <li><a href="#">BUSINESS<span class="material-icons align-middle"> expand_more </span></a></li>
             <li>PATNERS</li>
-            <li>HELP & FAQ</li>
+            <li><a href="#">HELP & FAQ<span class="material-icons align-middle"> expand_more </span></a></li>
           </ul>
         </div>
 
@@ -75,7 +79,8 @@
         </div>
       </div>
 
-      <div class="mega-menu flex-column ease-in">
+      <div class="mega-menu -translate-y-full  flex-column ease-in -out duration-300">
+
         <div class="personal mega-menu-item">
           <div class="one">
             <h3>Pay With PayPal</h3>
