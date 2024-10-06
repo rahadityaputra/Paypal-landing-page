@@ -1,47 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style type="text/tailwindcss">
-    @layer utilities {
-      .content-auto {
-        content-visibility: auto;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+
+
       }
-    }
-  </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-          }
+
+      @layer components {
+        .mega-menu-item {
+            @apply bg-blue-700 p-5  text-white flex;
+        }
+
+        .mega-menu-item > div {
+            @apply basis-1/2;
+        }
+
+        .mega-menu-item > div > h3 {
+            @apply font-bold;
         }
       }
-    }
-  </script>
-   
-</head>
-<body class="bg-blue-400">
-  <!-- <h1 class="text-3xl font-bold underline"> -->
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="">
+    <!-- <h1 class="text-3xl font-bold underline"> -->
     <!-- Hello world! -->
-  <!-- </h1> -->
-   <nav id="navbar" class="vw-100 bg-white p-3 flex" >
-    <div class="nav-brand text-3xl font-bold ">
-        <span class="text-blue-600">Pay</span><span class="text-blue-200">Pal</span>
-    </div>
+    <!-- </h1> -->
+    <nav id="navbar">
+      <div
+        class="main-menu vw-100 bg-white p-3 flex justify-between items-center flex-wrap"
+      >
+        <div class="nav-brand text-3xl font-bold basis-1/4 text-center">
+          <span class="text-blue-600">Pay</span
+          ><span class="text-blue-200">Pal</span>
+        </div>
 
+        <div class="list-menu text-lg font-bold text-gray-500 basis-1/2">
+          <ul class="flex gap-x-5 w-full h-full items-center justify-evenly">
+            <li>PERSONAL</li>
+            <li>BUSINESS</li>
+            <li>PATNERS</li>
+            <li>HELP & FAQ</li>
+          </ul>
+        </div>
 
-    <div class="user-authenticatio">
-        <a href="/login" class="px-4 py-2 bg-white border-blue-400 border rounded-full hover:bg-blue-400 hover:text-white">Log In</a>
-        <a href="/sigin" class="bg-blue-400 hover:bg-white px-4 py-2 rounded-full text-white hover:text-black hover:border hover:border-blue-400">Sign In</a>
-    </div>
-   </nav>
+        <div class="user-authenticatio p-4 basis-1/4 text-center">
+          <a
+            href="/login"
+            class="px-4 py-2 bg-white border-blue-400 border rounded-full hover:bg-blue-400 hover:text-white"
+            >Log In</a
+          >
+          <a
+            href="/sigin"
+            class="bg-blue-400 hover:bg-white px-4 py-2 rounded-full text-white hover:text-black hover:border hover:border-blue-400"
+            >Sign In</a
+          >
+        </div>
+      </div>
 
+      <div class="mega-menu flex-column ease-in">
+        <div class="personal mega-menu-item">
+          <div class="one">
+            <h3>Pay With PayPal</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="two">
+            <h3>Fraud Prevention Tisp</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="three">
+            <h3>Online Security</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="four">
+            <h3>Phising Protection Tips</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+        </div>
+        <div class="business bg-blue-700"></div>
+        <div class="patners bg-blue-700"></div>
+        <div class="help-faq bg-blue-700"></div>
+      </div>
+    </nav>
 
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
