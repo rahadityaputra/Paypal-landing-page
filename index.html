@@ -13,20 +13,24 @@
       }
 
       @layer components {
+        .mega-menu {
+          @apply w-full p-5  ;
+        }
         .mega-menu-item {
-          @apply bg-blue-700 p-5  text-white flex;
+          @apply bg-blue-700 text-white flex p-5  w-full ;
         }
 
         .mega-menu.active {
           @apply translate-y-0;
         }
 
-        .mega-menu-item > div {
-          @apply basis-1/2;
-        }
 
         .mega-menu-item > div > h3 {
           @apply font-bold;
+        }
+
+        .icon.rotate {
+          @apply  rotate-180;
         }
       }
     </style>
@@ -58,10 +62,10 @@
 
         <div class="list-menu text-lg font-bold text-gray-500 basis-1/2">
           <ul class="flex gap-x-5 w-full h-full items-center justify-evenly">
-            <li class="border-"><a href="#">PERSONAL<span class="material-icons align-middle"> expand_more </span></a></li>
-            <li><a href="#">BUSINESS<span class="material-icons align-middle"> expand_more </span></a></li>
+            <li data-target="personal"><a href="#">PERSONAL<span class="icon material-icons align-middle"> expand_more </span></a></li>
+            <li data-target="business"><a href="#">BUSINESS<span class="icon material-icons align-middle"> expand_more </span></a></li>
             <li>PATNERS</li>
-            <li><a href="#">HELP & FAQ<span class="material-icons align-middle"> expand_more </span></a></li>
+            <li data-target="faq"><a href="#">HELP & FAQ<span class="icon material-icons align-middle"> expand_more </span></a></li>
           </ul>
         </div>
 
@@ -79,9 +83,9 @@
         </div>
       </div>
 
-      <div class="mega-menu -translate-y-full  flex-column ease-in -out duration-300">
-
-        <div class="personal mega-menu-item">
+      <div class="mega-menu ease-in -out duration-300">
+        <div class="mega-menu-item hidden" data-id="personal">
+          <h1>personal</h1>
           <div class="one">
             <h3>Pay With PayPal</h3>
             <p>Use PayPal to shop & send payments</p>
@@ -99,9 +103,45 @@
             <p>Use PayPal to shop & send payments</p>
           </div>
         </div>
-        <div class="business bg-blue-700"></div>
-        <div class="patners bg-blue-700"></div>
-        <div class="help-faq bg-blue-700"></div>
+        <div class="mega-menu-item hidden" data-id="business">
+          <h1>business</h1>
+          <div class="one">
+            <h3>Pay With PayPal</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="two">
+            <h3>Fraud Prevention Tisp</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="three">
+            <h3>Online Security</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="four">
+            <h3>Phising Protection Tips</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+        </div>
+        <div class="mega-menu-item hidden" data-id="faq">
+          <h1>faq</h1>
+          <div class="one">
+            <h3>Pay With PayPal</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="two">
+            <h3>Fraud Prevention Tisp</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="three">
+            <h3>Online Security</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+          <div class="four">
+            <h3>Phising Protection Tips</h3>
+            <p>Use PayPal to shop & send payments</p>
+          </div>
+        </div>
+    
       </div>
     </nav>
 
